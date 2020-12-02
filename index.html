@@ -20,8 +20,8 @@
           <img src="img/Netflix_icon.svg" width="50" height="50" alt="" loading="lazy">
         </a>
         <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-danger my-2 my-sm-0" type="submit">Search</button>
+          <input v-model="querySearch" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <a href="#" class="btn btn-danger my-2 my-sm-0" v-on:click="submitSearch">Search</a>
         </form>
       </nav>
 
@@ -31,7 +31,7 @@
           <div class="card"
                 style="width: 18rem;"
                 v-for="movie in movieSearch">
-            <img :src= "'https://image.tmdb.org/t/p/w500/' + movie.poster_path" class="card-img-top" alt="...">
+            <img :src= "'https://image.tmdb.org/t/p/w200/' + movie.poster_path" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{ movie.title }}</h5>
                 <h6 class="card-title">{{ movie.original_title }}</h5>
