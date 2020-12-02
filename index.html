@@ -13,7 +13,7 @@
     <script src="script/vue.js" charset="utf-8"></script>
   </head>
   <body>
-    <div id="myApp" class="container">
+    <div id="myApp" class="my_container">
       <!-- NAVBAR -->
       <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand">
@@ -26,22 +26,22 @@
       </nav>
 
       <!-- CARDS -->
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="card"
-                style="width: 18rem;"
-                v-for="movie in movieSearch">
-            <img :src= "'https://image.tmdb.org/t/p/w200/' + movie.poster_path" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">{{ movie.title }}</h5>
-                <h6 class="card-title">{{ movie.original_title }}</h5>
-                <p class="card-text">Lingua originale: {{ movie.original_language }}</p>
-                <p class="card-text">Media voto: {{ movie.vote_average }}</p>
-                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-              </div>
+      <div class="row row-cols-1 row-cols-md-3">
+        <div class="card w-25 p-3"
+              style="width: 18rem;"
+              v-for="movie in movieSearch">
+          <img :src= "'https://image.tmdb.org/t/p/w200/' + movie.poster_path" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ movie.title }}</h5>
+            <h6 class="card-title">{{ movie.original_title }}</h5>
+            <p class="card-text">Lingua originale: {{ movie.original_language }}</p>
+            <p class="card-text">Media voto: {{ movie.vote_average }}</p>
+            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
           </div>
         </div>
       </div>
+
+
     </div>
 
 

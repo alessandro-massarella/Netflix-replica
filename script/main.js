@@ -12,23 +12,7 @@ const myApp = new Vue ({
   data: {
     movieSearch: [],
     querySearch: '',
-
   },
-  // mounted: function() {
-  //
-  //   axios
-  //         .get ('https://api.themoviedb.org/3/search/movie', {
-  //           params: {
-  //             'api_key': API_KEY,
-  //             'query': this.querySearch
-  //           }
-  //         })
-  //         .then ( (result) => {
-  //           console.log(result)
-  //           this.movieSearch = result.data.results
-  //           console.log(this.movieSearch)
-  //         })
-  // },
 
   methods: {
     submitSearch: function() {
@@ -44,11 +28,6 @@ const myApp = new Vue ({
               this.movieSearch = result.data.results
               console.log(this.movieSearch)
             })
-
-
     }
-
   }
-
-
 });
