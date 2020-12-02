@@ -11,7 +11,8 @@ const myApp = new Vue ({
   el: '#myApp',
 
   data: {
-    movieDatabase: [],
+    movieSearch: [],
+    querySearch: 'titanic',
 
   },
   mounted: function() {
@@ -20,9 +21,14 @@ const myApp = new Vue ({
     axios
           .get ('https://api.themoviedb.org/3/search/movie', {
             params: {
-              'api_key': '02a542c8f8c1d3909cadbfdcc1deab245',
-              'query': 'future'
+              'api_key': API_KEY,
+              'query': this.querySearch
             }
+          })
+          .then ( (result) => {
+            console.log(result)
+            this.movieSearch = result.data.results
+            console.log(this.movieSearch)
           })
   },
 
