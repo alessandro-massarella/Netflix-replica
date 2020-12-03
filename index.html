@@ -13,7 +13,7 @@
     <script src="script/vue.js" charset="utf-8"></script>
   </head>
   <body>
-    <div id="myApp" class="my_container">
+    <div id="myApp">
       <!-- NAVBAR -->
       <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand">
@@ -25,23 +25,46 @@
         </form>
       </nav>
 
-      <!-- CARDS -->
+      <!-- CARDS  MOVIE-->
       <div class="row row-cols-1 row-cols-md-3">
         <div class="card w-25 p-3"
               style="width: 18rem;"
               v-for="movie in movieSearch">
-          <img :src= "'https://image.tmdb.org/t/p/w200/' + movie.poster_path" class="card-img-top" alt="...">
+          <img :src= "'https://image.tmdb.org/t/p/original/' + movie.poster_path" class="card-img-top" alt="" @error="imgNotFound">
           <div class="card-body">
             <h5 class="card-title">{{ movie.title }}</h5>
             <h6 class="card-title">{{ movie.original_title }}</h5>
             <p class="card-text">Lingua originale: {{ movie.original_language }}</p>
-            <p class="card-text">Media voto: {{ movie.vote_average }}</p>
+            <img :src="'img/flags_png/' + movie.original_language + '.png'" alt="" @error="flagNotFound">
+            <!-- <p class="card-text">Voto: {{ movie.vote_average }}</p> -->
+            <span v-for="n in stars(movie.vote_average)"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                </svg>
+            </span>
             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
           </div>
         </div>
       </div>
-
-
+      <!-- CARDS  SERIES-->
+      <div class="row row-cols-1 row-cols-md-3">
+        <div class="card w-25 p-3"
+              style="width: 18rem;"
+              v-for="serie in serieSearch">
+          <img :src= "'https://image.tmdb.org/t/p/original/' + serie.poster_path" class="card-img-top" alt="" @error="imgNotFound">
+          <div class="card-body">
+            <h5 class="card-title">{{ serie.name }}</h5>
+            <h6 class="card-title">{{ serie.original_name }}</h5>
+            <p class="card-text">Lingua originale: {{ serie.original_language }}</p>
+            <img :src="'img/flags_png/' + serie.original_language + '.png'" alt="" @error="flagNotFound">
+            <!-- <p class="card-text">Voto: {{ movie.vote_average }}</p> -->
+            <span v-for="n in stars(serie.vote_average)"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-star-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                </svg>
+            </span>
+            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          </div>
+        </div>
+      </div>
     </div>
 
 
