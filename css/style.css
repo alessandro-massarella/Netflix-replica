@@ -11,3 +11,38 @@ body {
 .sectionTitle {
   margin-top: 20px;
 }
+
+.movie_box {
+  position: relative;
+}
+.overlay_box {
+  display: none;
+  z-index: 2;
+
+  position: absolute;
+  top: 0;
+  left:0;
+
+  background-color: black;
+  opacity: 0.9;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+#overview_text {
+  height: 50%;
+  overflow: hidden;
+}
+
+.poster_box:hover +.overlay_box {
+  display: block;
+}
+
+.sectionTitle {
+  display: none;
+}
+
+.visible {
+  display: block;
+}

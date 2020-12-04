@@ -10,11 +10,13 @@ const myApp = new Vue ({
     querySearch: '',
     // per il voto su 5 stelle:
     divisoreVoto: 2,
-    // è presente la bandiera?
+    hover: false,
+    isVisible: false,
   },
 
   methods: {
     submitSearch: function() {
+      this.isVisible= true, 
       axios
       // RICERCA FILM
             .get ('https://api.themoviedb.org/3/search/movie', {
@@ -42,7 +44,6 @@ const myApp = new Vue ({
             .then ( (result) => {
               console.log(result)
               this.serieSearch = result.data.results
-              // console.log(this.movieSearch)
             })
 
 
