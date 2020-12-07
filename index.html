@@ -50,8 +50,8 @@
                 <div class="stars">
                   Lingua originale:&nbsp
                   <img :src="'img/flags_png/' + movie.original_language + '.png'" alt="" @error="flagNotFound">
-                </div>
-                <p id="overview_text"><b>Overview:</b>{{ movie.overview }}...</p>
+                </div> <br>
+                <p id="overview_text"><b>Overview:&nbsp</b>{{ movie.overview }}...</p>
               </div>
             </div>
             <div class="card-body">
@@ -80,18 +80,15 @@
                 <div class="stars">
                   Lingua originale:&nbsp
                   <img :src="'img/flags_png/' + serie.original_language + '.png'" alt="" @error="flagNotFound">
-                </div>
-                <p id="overview_text"><b>Overview:</b>{{ serie.overview }}...</p>
+                </div> <br>
+                <p id="overview_text"><b>Overview:&nbsp</b>{{ serie.overview }}...</p>
               </div>
             </div>
             <div class="card-body">
             </div>
           </div>
         </div>
-
       </div>
-
-
       </div>
 
 
