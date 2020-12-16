@@ -16,15 +16,15 @@ body {
   position: relative;
 }
 .overlay_box {
-  display: none;
-  z-index: 2;
+  /* display: none; */
+  /* z-index: 2; */
 
   position: absolute;
   top: 0;
   left:0;
 
   background-color: black;
-  opacity: 0.9;
+  opacity: 0;
   width: 100%;
   height: 90%;
   padding: 20px;
@@ -32,14 +32,13 @@ body {
 
 #overview_text {
   height: 50%;
-  overflow: hidden;
+  overflow:auto;
   font-size: 0.7rem;
 }
 
-.movie_box:hover +.overlay_box {
-  display: block;
+.overlay_box:hover {
+  opacity: 0.9;
 }
-
 .sectionTitle {
   display: none;
 }
