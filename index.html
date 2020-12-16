@@ -23,7 +23,7 @@
           <img src="img/Netflix_icon.svg" width="30" height="30" alt="" loading="lazy">
         </a>
         <form class="form-inline">
-          <input v-model="querySearch" class="form-control mr-sm-2" type="search" placeholder="Cerca un film o serie" aria-label="Search">
+          <input v-on:keyup.enter="submitSearch" v-model="querySearch" class="form-control mr-sm-2" type="search" placeholder="Cerca un film o serie" aria-label="Search">
           <a href="#" class="btn btn-danger my-2 my-sm-0" v-on:click="submitSearch">Search</a>
         </form>
       </nav>
