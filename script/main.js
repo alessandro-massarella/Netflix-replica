@@ -11,6 +11,7 @@ const myApp = new Vue ({
     serieSearch: [],
     querySearch: '',
     // per il voto su 5 stelle:
+    maxStars: 5,
     divisoreVoto: 2,
     hover: false,
     isVisible: false,
@@ -46,6 +47,9 @@ const myApp = new Vue ({
 
     stars: function (n) {
       return Math.ceil( n / this.divisoreVoto)
+    },
+    emptyStars: function (n) {
+      return this.maxStars - (Math.ceil ( n / this.divisoreVoto))
     },
 
     flagNotFound: function(e) {

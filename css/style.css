@@ -26,8 +26,8 @@ body {
   background-color: black;
   opacity: 0.9;
   width: 100%;
-  height: 100%;
-  padding: 10px;
+  height: 90%;
+  padding: 20px;
 }
 
 #overview_text {
@@ -36,7 +36,7 @@ body {
   font-size: 0.7rem;
 }
 
-.poster_box:hover +.overlay_box {
+.movie_box:hover +.overlay_box {
   display: block;
 }
 
